@@ -55,7 +55,6 @@ sudo apt install -y inotify-tools fonts-wqy-zenhei iw
 ### Configuration for power
 sudo tee "$POWERFIX" <<EOF
 #!/bin/bash
-sudo chmod 777 /home/android/octo4a/serialpipe
 sudo unchroot dumpsys battery set status 2
 sudo unchroot dumpsys battery set level 98
 sudo unchroot dumpsys deviceidle disable >/dev/null 2>&1
@@ -195,7 +194,7 @@ sudo tee "$ETC_INIT_KLIPPER" <<EOF
 # Short-Description: Klipper daemon
 # Description:       Starts the Klipper daemon.
 ### END INIT INFO
-
+sudo chmod 777 /home/android/octo4a/serialpipe
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 DESC="klipper daemon"
 NAME="klipper"
