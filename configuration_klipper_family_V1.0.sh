@@ -55,6 +55,7 @@ sudo apt install -y inotify-tools fonts-wqy-zenhei iw
 ### Configuration for power
 sudo tee "$POWERFIX" <<EOF
 #!/bin/bash
+sudo chmod 777 /home/android/octo4a/serialpipe
 sudo unchroot dumpsys battery set status 2
 sudo unchroot dumpsys battery set level 98
 sudo unchroot dumpsys deviceidle disable >/dev/null 2>&1
